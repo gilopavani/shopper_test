@@ -12,6 +12,7 @@ describe("GetDriversUseCase", () => {
         description: "Experienced driver",
         car: "Toyota Prius",
         tax: 15,
+        min_km: 100,
         Review: [
           { rating: 5, comment: "Excelente motorista!" },
           { rating: 4, comment: "Bom, mas pode melhorar." },
