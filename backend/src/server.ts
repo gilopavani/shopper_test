@@ -16,15 +16,18 @@ app.use(
   (error: Error, request: Request, response: Response, next: NextFunction) => {
     if (error instanceof AppError) {
       return response.status(error.statusCode).json({
-        message: error.message,
+        error_code: error.errorCode,
+        error_description: error.errorDescription,
       });
     }
 
     return response.status(500).json({
-      status: "Error",
-      message: `Internal server error ${error.message}`,
+      error_code: "INTERNAL_SERVER_ERROR",
+      error_description: `Internal server error: ${error.message}`,
     });
   }
 );
+
+export { app };
 
 app.listen(3333, "0.0.0.0", () => "server running on port 3333");
