@@ -7,7 +7,7 @@ export const geocodeAddress = async (address: string) => {
   const response = await googleMapsClient.geocode({
     params: {
       address,
-      key: process.env.GOOGLE_MAPS_API_KEY || "",
+      key: process.env.GOOGLE_API_KEY || "",
     },
   });
 
@@ -29,7 +29,7 @@ export const getDirections = async (origin: string, destination: string) => {
     params: {
       origin,
       destination,
-      key: process.env.GOOGLE_MAPS_API_KEY || "",
+      key: process.env.GOOGLE_API_KEY || "",
     },
   });
 
