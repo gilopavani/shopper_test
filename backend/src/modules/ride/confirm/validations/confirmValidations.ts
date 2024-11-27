@@ -8,6 +8,7 @@ export function validateConfirmRaceApprovalPoints({
   driver_min_distance,
 }: any): void {
   if (!origin || !destination || !customer_id) {
+    console.log(origin, destination, customer_id);
     throw new AppError(
       "INVALID_DATA",
       "Os dados fornecidos no corpo da requisição são inválidos",

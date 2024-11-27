@@ -40,6 +40,7 @@ model RaceApprovalPoints {
     price       Float
     driverId    Int
     driver      Driver @relation(fields: [driverId], references: [id])
+    createdAt   DateTime @default(now())
 
     @@map("race_approval_points")
 }
